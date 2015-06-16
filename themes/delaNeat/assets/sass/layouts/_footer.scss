@@ -1,0 +1,23 @@
+footer {
+	@include float(left);
+	margin: 0 auto;
+	width: 100%;
+	.site-info {
+		margin: auto;
+		width: 100%;
+	}
+	.footer-left {
+		@include span-columns(6);
+		margin-top: 30px;
+		margin-bottom: 40px;
+		padding: 10px;
+		@include text-align(left);
+	}
+	.footer-right {
+		@include span-columns(6);
+		margin-top: 30px;
+		margin-bottom: 40px;
+		padding: 10px;
+		@include text-align(right);
+	}
+}

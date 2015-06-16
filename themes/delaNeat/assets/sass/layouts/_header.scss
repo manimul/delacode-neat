@@ -1,0 +1,118 @@
+.site-header{
+position:relative;
+
+}
+
+
+
+.header-image{
+     width:100%;
+     display:none;
+    
+     @include media($md) {
+       display:block;   
+       
+    }
+}
+
+
+.hero-wrapper {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  color: #fafafa;
+  text-shadow: none;
+  background: rgba(146,122,101,0.2);
+}
+
+.site-branding {
+    position: relative;
+    top: 31%;
+    width: 100%;
+    text-align:center;
+    display:none;  
+     @include media($mdbg) {
+       top: 45%;
+       
+    }
+     @include media($md) {
+       display:block;
+        
+       
+    }
+    
+    button{
+    
+    background: none;
+    border: 2px solid white;
+    }
+    
+    .site-title {
+       
+        width:100%;
+		font-family: $title;
+        margin:0px;
+		
+
+		@include media($sm) {
+			@include fontSize(35px);
+		}
+		@include media($smbg) {
+			@include fontSize(55px);
+		}
+		@include media($md) {
+			@include fontSize(75px);
+		}
+        
+            h1{
+            color:$base-body-color;
+            }
+
+		a,a:visited {
+			line-height: 1;
+		}
+
+	}
+
+	.site-description {
+       
+		padding: 10px 0 15px;
+        width:100%;
+        margin:0px;
+		@include fontSize(20px);
+
+		@include media($sm) {
+			@include fontSize(15px);
+		}
+		@include media($smbg) {
+			@include fontSize(18px);
+		}
+		@include media($md) {
+			@include fontSize(25px);
+		}
+         h3{
+          color:$base-body-color;
+         }
+		font-family: $content;
+		
+	}
+}
+
+#sub-header{
+  background: #fcc222;
+    padding:50px 1em;
+    
+    @include media($md) {
+padding:50px 9em;
+    }
+     .sub-text-container{
+     text-align:center;
+         span{
+         color:#fff;
+        @include fontSize(25px);
+         }
+     }
+
+}

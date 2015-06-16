@@ -1,0 +1,1996 @@
+/*
+Theme Name: Some Like it Neat
+Theme URI: https://github.com/digisavvy/some-like-it-neat
+Author: Alex Vasquez
+Author URI: http://alexhasnicehair.com
+Description: A simple yet advanced Starter Theme built using _S, Bourbon and Neat (http://underscores.me, http://bourbon.io, http://neat.bourbon.io). Please refer to the README.md file for basic usage instructions and prerequisites. You can always grab the latest version over at http://github.com/digisavvy.some-like-it-neat
+Version: 1.3.1
+License: GNU General Public License
+License URI: license.txt
+Text Domain: some_like_it_neat
+Domain Path: /library/languages/
+Tags: white, light, one-column, two-columns, right-sidebar, responsive-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, translation-ready, accessibility-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Some Like it Neat is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Bourbon, Bitters, Neat
+2.0 - Normalize
+3.0 - Elements
+4.0 - Forms
+5.0 - Components/ Add-ons
+6.0 - Layout and Structure
+	6.1 - Header
+	6.2 - Navigation
+	6.3 - Content
+	6.4 - Page Templates
+	6.5 - Sidebar
+	6.6 - Footer
+	6.7 - Accessbility
+
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+1.0 Bourbon, Bitters, Neat
+--------------------------------------------------------------*/
+/* line 1, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/buttons */
+button, input[type="button"], input[type="reset"], input[type="submit"], button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  background-color: #477dca;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1em;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap; }
+  /* line 21, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/buttons */
+  button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus, button:hover, button:focus {
+    background-color: #2c5999;
+    color: #fff; }
+  /* line 26, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/buttons */
+  button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled, button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5; }
+
+/* line 1, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/forms */
+fieldset {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  margin: 0 0 0.75em;
+  padding: 1.5em; }
+
+/* line 10, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/forms */
+input, label, select {
+  display: block;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em; }
+
+/* line 16, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/forms */
+label {
+  font-weight: 600;
+  margin-bottom: 0.375em; }
+  /* line 20, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/forms */
+  label.required::after {
+    content: "*"; }
+  /* line 24, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/forms */
+  label abbr {
+    display: none; }
+
+/* line 29, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/forms */
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea, select[multiple=multiple], textarea {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  padding: 0.5em;
+  transition: border-color;
+  width: 100%; }
+  /* line 42, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/forms */
+  input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, textarea:hover, select[multiple=multiple]:hover, textarea:hover {
+    border-color: #c4c4c4; }
+  /* line 46, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/forms */
+  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus, select[multiple=multiple]:focus, textarea:focus {
+    border-color: #477dca;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(55, 112, 192, 0.7);
+    outline: none; }
+
+/* line 53, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/forms */
+textarea {
+  resize: vertical; }
+
+/* line 57, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/forms */
+input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none; }
+
+/* line 62, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/forms */
+input[type="checkbox"], input[type="radio"] {
+  display: inline;
+  margin-right: 0.375em; }
+
+/* line 67, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/forms */
+input[type="file"] {
+  padding-bottom: 0.75em;
+  width: 100%; }
+
+/* line 72, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/forms */
+select {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+  width: auto; }
+
+/* line 2, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/lists */
+ul, ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  /* line 7, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/lists */
+  ul {
+    list-style-type: disc;
+    margin-bottom: 0.75em;
+    padding-left: 1.5em; }
+  /* line 13, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/lists */
+  ol {
+    list-style-type: decimal;
+    margin-bottom: 0.75em;
+    padding-left: 1.5em; }
+
+/* line 20, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/lists */
+dl {
+  margin-bottom: 0.75em; }
+  /* line 23, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/lists */
+  dl dt {
+    font-weight: bold;
+    margin-top: 0.75em; }
+  /* line 28, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/lists */
+  dl dd {
+    margin: 0; }
+
+/* line 1, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/tables */
+table {
+  -webkit-font-feature-settings: "kern", "liga", "tnum";
+  -moz-font-feature-settings: "kern", "liga", "tnum";
+  -ms-font-feature-settings: "kern", "liga", "tnum";
+  font-feature-settings: "kern", "liga", "tnum";
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%; }
+
+/* line 9, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/tables */
+th {
+  border-bottom: 1px solid #b7b7b7;
+  font-weight: 600;
+  padding: 0.75em 0;
+  text-align: left; }
+
+/* line 16, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/tables */
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 0.75em 0; }
+
+/* line 23, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/tables */
+tr, td, th {
+  vertical-align: middle; }
+
+/* line 1, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/typography */
+body {
+  -webkit-font-feature-settings: "kern", "liga", "pnum";
+  -moz-font-feature-settings: "kern", "liga", "pnum";
+  -ms-font-feature-settings: "kern", "liga", "pnum";
+  font-feature-settings: "kern", "liga", "pnum";
+  -webkit-font-smoothing: antialiased;
+  color: #333;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  line-height: 1.5; }
+
+/* line 15, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+  margin: 0 0 0.75em; }
+
+/* line 22, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/typography */
+p {
+  margin: 0 0 0.75em; }
+
+/* line 26, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/typography */
+a {
+  color: #477dca;
+  text-decoration: none;
+  transition: color 0.1s linear; }
+  /* line 33, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/typography */
+  a:active, a:focus, a:hover {
+    color: #2c5999; }
+  /* line 38, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/typography */
+  a:active, a:focus {
+    outline: none; }
+
+/* line 43, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/typography */
+hr {
+  border-bottom: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: 1.5em 0; }
+
+/* line 52, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/base/typography */
+img, picture {
+  margin: 0;
+  max-width: 100%; }
+
+/* line 4, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/box-sizing */
+html {
+  box-sizing: border-box; }
+
+/* line 11, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/box-sizing */
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/*--------------------------------------------------------------
+2.0 Variables
+--------------------------------------------------------------*/
+/* =Variables
+-------------------------------------------------------------- */
+/*--------------------------------------------------------------
+3.0 Normalize/Reset
+--------------------------------------------------------------*/
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+/* line 22, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block; }
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+/* line 32, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+audio, canvas, video {
+  display: inline-block; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 41, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+/* line 52, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+[hidden], template {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 66, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+/* line 76, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 88, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+a {
+  background: transparent; }
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+/* line 96, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 105, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+a:active, a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 118, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+/* line 127, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 136, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+b, strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+/* line 144, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 152, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 162, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+/* line 174, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+/* line 183, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+pre {
+  white-space: pre-wrap; }
+
+/**
+ * Set consistent quote types.
+ */
+/* line 191, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 199, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 208, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 215, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+sup {
+  top: -0.5em; }
+
+/* line 219, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+/* line 231, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+img {
+  border: 0;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+/* line 242, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+/* line 254, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 266, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 277, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 291, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+button, input, select, textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 303, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+button, input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+/* line 315, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+button, select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 330, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 340, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 350, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 361, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+/* line 374, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 383, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+/* line 393, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 406, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/normalize */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*--------------------------------------------------------------
+4.0 Typography
+--------------------------------------------------------------*/
+/* =Typographical Mixins/Functions
+-------------------------------------------------------------- */
+/**
+ * PX to Rem Sizing
+ *
+ * How to use
+ * @include fontSize(20px);
+ *
+ * Ouputs —
+ * font-size: 20px;
+ * font-size: 1.25rem;
+ */
+/* =Genericons and Dashicons
+-------------------------------------------------------------- */
+/* =Typography
+-------------------------------------------------------------- */
+/* line 44, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+html {
+  font-size: 100%; }
+
+/* line 48, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+body {
+  font-size: 20px;
+  font-size: 1.11111rem; }
+
+/* line 51, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  float: none;
+  line-height: 1.25em;
+  margin-bottom: 20px;
+  text-transform: uppercase; }
+  /* line 20, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/bourbon/app/assets/stylesheets/addons/clearfix */
+  h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+/* line 60, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+h1 {
+  font-size: 75px;
+  font-size: 4.16667rem;
+  color: #000;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
+
+/* line 65, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+h2 {
+  font-size: 50px;
+  font-size: 2.77778rem;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
+
+/* line 69, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+h3 {
+  font-size: 35px;
+  font-size: 1.94444rem;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
+
+/* line 73, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+h4 {
+  font-size: 24px;
+  font-size: 1.33333rem;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
+
+/* line 77, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+h5 {
+  font-size: 20px;
+  font-size: 1.11111rem;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
+
+/* line 81, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+h6 {
+  font-size: 18px;
+  font-size: 1rem;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
+
+/* line 85, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+blockquote {
+  background-color: #f7f7f7;
+  border-left: solid 5px #f3f3f3;
+  font-style: italic;
+  padding: 20px; }
+
+/* line 91, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+cite {
+  font-style: italic; }
+
+/* line 94, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+strong, b {
+  color: #000;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
+
+/* line 98, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+a, a:visited {
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  color: #000;
+  text-decoration: none; }
+  /* line 103, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+  a:hover, a:visited:hover {
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    color: #f3f3f3;
+    text-decoration: underline; }
+
+/* line 111, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+ul:nth-child(n+2) {
+  margin-bottom: 0; }
+
+/* line 117, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+ol:nth-child(n+2) {
+  margin-bottom: 0; }
+
+/* line 121, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+.entry-title {
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  text-align: center; }
+  @media screen and (min-width: 200px)  {
+    .entry-title {
+      font-size: 40px;
+      font-size: 2.22222rem; } }
+  @media screen and (min-width: 480px)  {
+    .entry-title {
+      font-size: 65px;
+      font-size: 3.61111rem; } }
+  @media screen and (min-width: 768px)  {
+    .entry-title {
+      font-size: 100px;
+      font-size: 5.55556rem; } }
+
+/* line 136, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/typography */
+#primary, #secondary {
+  font-family: "Lucida Grande", "Tahoma", "Verdana", "Arial", sans-serif; }
+
+/*--------------------------------------------------------------
+5.0 Components/Add-ons
+--------------------------------------------------------------*/
+/* line 70, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/buttons */
+#submit {
+  background: #000;
+  border: solid 5px #555;
+  border-radius: 0;
+  box-shadow: none;
+  clear: both;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  margin: 10px 0;
+  padding: 20px;
+  transition: all 200ms ease-in-out; }
+  /* line 12, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/buttons */
+  #submit:focus {
+    background: black;
+    border: solid 5px #222222;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    padding: 20px; }
+  /* line 21, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/buttons */
+  #submit:hover {
+    background: black;
+    border: solid 5px #222222;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    padding: 20px; }
+  /* line 72, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/buttons */
+  #submit:hover {
+    background-color: #555; }
+
+/* line 77, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/buttons */
+.neat-button {
+  background: #ffffff;
+  border: solid 5px #ccc;
+  border-radius: 0;
+  box-shadow: none;
+  clear: both;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  margin: 10px 0;
+  padding: 20px;
+  transition: all 200ms ease-in-out; }
+  /* line 12, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/buttons */
+  .neat-button:focus {
+    background: #f2f2f2;
+    border: solid 5px #999999;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    padding: 20px; }
+  /* line 21, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/buttons */
+  .neat-button:hover {
+    background: #f2f2f2;
+    border: solid 5px #999999;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    padding: 20px; }
+
+/* line 82, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/buttons */
+.neat-3d-button {
+  background: #ffffff;
+  border-top: solid 3px #ccc;
+  border-right: solid 3px #ccc;
+  border-left: solid 3px #ccc;
+  border-bottom: solid 5px #999;
+  border-radius: 0;
+  clear: both;
+  float: left ;
+  font-family: oswald;
+  margin: 15px 0;
+  padding: 20px;
+  transition: all 200ms ease-in-out; }
+  /* line 45, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/buttons */
+  .neat-3d-button:focus {
+    background: #f2f2f2;
+    border-top: solid 3px #999999;
+    border-right: solid 3px #999999;
+    border-left: solid 3px #999999;
+    border-bottom: solid 3px #999999;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    padding: 20px; }
+  /* line 57, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/buttons */
+  .neat-3d-button:hover {
+    background: #f2f2f2;
+    border-top: solid 3px #999999;
+    border-right: solid 3px #999999;
+    border-left: solid 3px #999999;
+    border-bottom: solid 3px #999999;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    padding: 20px; }
+
+/* line 86, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/buttons */
+input[type="submit"] {
+  background: #000;
+  border: solid 5px #555;
+  border-radius: 0;
+  box-shadow: none;
+  clear: both;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  margin: 10px 0;
+  padding: 20px;
+  transition: all 200ms ease-in-out;
+  margin: 0;
+  padding: 8px; }
+  /* line 12, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/buttons */
+  input[type="submit"]:focus {
+    background: black;
+    border: solid 5px #222222;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    padding: 20px; }
+  /* line 21, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/buttons */
+  input[type="submit"]:hover {
+    background: black;
+    border: solid 5px #222222;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    padding: 20px; }
+  /* line 90, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/buttons */
+  input[type="submit"]:hover {
+    background-color: #999999;
+    padding: 8px; }
+
+/* line 95, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/buttons */
+input#s {
+  float: left ;
+  width: 70%; }
+
+/* Hides navigation links and site footer when infinite scroll is active */
+/* line 3, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/infinite-scroll */
+.infinite-scroll #navigation, .infinite-scroll.neverending #footer {
+  display: none; }
+
+/* Shows the footer again in case all posts have been loaded */
+/* line 7, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/infinite-scroll */
+.infinity-end.neverending #footer {
+  display: block; }
+
+/*--------------------------------------------------------------
+6.0 Layout and Structure
+--------------------------------------------------------------*/
+/* =Structure/Scaffolding
+-------------------------------------------------------------- */
+/* line 7, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/structure */
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: "Lucida Grande", "Tahoma", "Verdana", "Arial", sans-serif;
+  line-height: 1.5em;
+  word-break: break-word; }
+
+/* line 27, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/structure */
+#page {
+  max-width: 121.25em;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 20, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/bourbon/app/assets/stylesheets/addons/clearfix */
+  #page::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+/* line 36, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/structure */
+#primary {
+  margin: 0 auto;
+  width: 100%; }
+  /* line 20, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/bourbon/app/assets/stylesheets/addons/clearfix */
+  #primary::after {
+    clear: both;
+    content: "";
+    display: table; }
+  @media screen and (min-width: 200px)  {
+    #primary {
+      float: left;
+      display: block;
+      margin-right: 6.66667%;
+      width: 100%; }
+      /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+      #primary:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 768px)  {
+    #primary {
+      float: left;
+      display: block;
+      margin-right: 4.34783%;
+      width: 65.21739%;
+      margin-right: 0; }
+      /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+      #primary:last-child {
+        margin-right: 0; } }
+  /* line 49, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/structure */
+  #primary ul {
+    list-style: none; }
+    /* line 52, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/structure */
+    #primary ul li {
+      list-style-type: square; }
+
+/* line 57, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/structure */
+#secondary {
+  margin: 20px auto;
+  padding: 0 30px 0 0;
+  width: 100%; }
+  @media screen and (min-width: 200px)  {
+    #secondary {
+      float: left;
+      display: block;
+      margin-right: 6.66667%;
+      width: 100%;
+      padding: 30px; }
+      /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+      #secondary:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 768px)  {
+    #secondary {
+      float: left;
+      display: block;
+      margin-right: 4.34783%;
+      width: 30.43478%;
+      margin-right: 0; }
+      /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+      #secondary:last-child {
+        margin-right: 0; } }
+
+/*--------------------------------------------------------------
+	6.1 Layout and Structure
+	--------------------------------------------------------------*/
+/* line 1, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/header */
+.site-header {
+  position: relative; }
+
+/* line 8, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/header */
+.header-image {
+  width: 100%;
+  display: none; }
+  @media screen and (min-width: 768px)  {
+    .header-image {
+      display: block; } }
+
+/* line 19, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/header */
+.hero-wrapper {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  color: #fafafa;
+  text-shadow: none;
+  background: rgba(146, 122, 101, 0.2); }
+
+/* line 30, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/header */
+.site-branding {
+  position: relative;
+  top: 31%;
+  width: 100%;
+  text-align: center;
+  display: none; }
+  @media screen and (min-width: 1024)  {
+    .site-branding {
+      top: 45%; } }
+  @media screen and (min-width: 768px)  {
+    .site-branding {
+      display: block; } }
+  /* line 46, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/header */
+  .site-branding button {
+    background: none;
+    border: 2px solid white; }
+  /* line 52, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/header */
+  .site-branding .site-title {
+    width: 100%;
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    margin: 0px; }
+    @media screen and (min-width: 200px)  {
+      .site-branding .site-title {
+        font-size: 35px;
+        font-size: 1.94444rem; } }
+    @media screen and (min-width: 480px)  {
+      .site-branding .site-title {
+        font-size: 55px;
+        font-size: 3.05556rem; } }
+    @media screen and (min-width: 768px)  {
+      .site-branding .site-title {
+        font-size: 75px;
+        font-size: 4.16667rem; } }
+    /* line 69, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/header */
+    .site-branding .site-title h1 {
+      color: #fff; }
+    /* line 73, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/header */
+    .site-branding .site-title a, .site-branding .site-title a:visited {
+      line-height: 1; }
+  /* line 79, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/header */
+  .site-branding .site-description {
+    padding: 10px 0 15px;
+    width: 100%;
+    margin: 0px;
+    font-size: 20px;
+    font-size: 1.11111rem;
+    font-family: "Lucida Grande", "Tahoma", "Verdana", "Arial", sans-serif; }
+    @media screen and (min-width: 200px)  {
+      .site-branding .site-description {
+        font-size: 15px;
+        font-size: 0.83333rem; } }
+    @media screen and (min-width: 480px)  {
+      .site-branding .site-description {
+        font-size: 18px;
+        font-size: 1rem; } }
+    @media screen and (min-width: 768px)  {
+      .site-branding .site-description {
+        font-size: 25px;
+        font-size: 1.38889rem; } }
+    /* line 95, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/header */
+    .site-branding .site-description h3 {
+      color: #fff; }
+
+/* line 103, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/header */
+#sub-header {
+  background: #fcc222;
+  padding: 50px 1em; }
+  @media screen and (min-width: 768px)  {
+    #sub-header {
+      padding: 50px 9em; } }
+  /* line 110, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/header */
+  #sub-header .sub-text-container {
+    text-align: center; }
+    /* line 112, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/header */
+    #sub-header .sub-text-container span {
+      color: #fff;
+      font-size: 25px;
+      font-size: 1.38889rem; }
+
+/*--------------------------------------------------------------
+	6.2 Navigation
+	--------------------------------------------------------------*/
+/* Flexnav Base Styles */
+/* line 9, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+.flexnav {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-in-out, width 0, height 0, top 0, left 0;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out, width 0, height 0, top 0, left 0;
+  -webkit-transform-style: preserve-3d; }
+  /* line 19, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .flexnav.opacity {
+    padding-left: 0; }
+  /* line 24, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .flexnav ul {
+    padding-left: 0;
+    margin-bottom: 0px; }
+  /* line 30, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .flexnav.flexnav-show {
+    max-height: 2000px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+  /* line 38, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .flexnav.one-page {
+    position: fixed;
+    top: 50px;
+    right: 5%;
+    max-width: 200px; }
+  /* line 45, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .flexnav li {
+    font-size: 100%;
+    position: relative;
+    overflow: hidden; }
+  /* line 50, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .flexnav li a {
+    position: relative;
+    display: block;
+    padding: 0.8em;
+    z-index: 2;
+    overflow: hidden;
+    color: #fff;
+    white-space: nowrap; }
+    /* line 59, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+    .flexnav li a:hover {
+      color: #f3f3f3 !important; }
+  /* line 66, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .flexnav li ul {
+    display: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    width: 100%;
+    z-index: 5; }
+    /* line 73, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+    .flexnav li ul li {
+      font-size: 100%;
+      position: relative;
+      overflow: hidden; }
+      /* line 77, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+      .flexnav li ul li:last-child {
+        border-bottom: 1px solid #666; }
+  /* line 84, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .flexnav li ul.flexnav-show li {
+    overflow: visible; }
+  /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .flexnav li ul li a {
+    display: block;
+    background: #333; }
+  /* line 93, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .flexnav ul li ul li a {
+    background: #666; }
+  /* line 96, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .flexnav ul li ul li ul li a {
+    background: #999; }
+  /* line 99, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .flexnav .touch-button {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 100%;
+    display: inline-block;
+    background: #acaca1;
+    background: rgba(0, 0, 0, 0.075);
+    text-align: center; }
+    /* line 110, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+    .flexnav .touch-button:hover {
+      cursor: pointer; }
+    /* line 113, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+    .flexnav .touch-button .navicon {
+      position: relative;
+      top: 1.4em;
+      font-size: 12px;
+      color: #666; }
+
+/* line 121, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+.menu-button {
+  position: relative;
+  display: block;
+  padding: 1em;
+  color: #fff;
+  background: none;
+  cursor: pointer;
+  float: right ; }
+  /* line 132, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .menu-button.one-page {
+    position: fixed;
+    top: 0;
+    right: 5%;
+    padding-right: 45px; }
+  /* line 139, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .menu-button .touch-button {
+    background: transparent;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    display: none;
+    text-align: center; }
+    /* line 150, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+    .menu-button .touch-button .navicon {
+      font-size: 16px;
+      position: relative;
+      top: 1em;
+      color: #666; }
+
+/* line 159, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+.menu-button:hover {
+  color: #fff; }
+  /* line 161, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .menu-button:hover i.navicon {
+    color: #fff; }
+    /* line 163, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+    .menu-button:hover i.navicon:after {
+      color: #fff;
+      content: 'Menu'; }
+/* line 169, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+.menu-button i.navicon {
+  display: block !important;
+  position: relative;
+  right: 30px; }
+  /* line 173, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .menu-button i.navicon:after {
+    color: #555;
+    content: 'Menu'; }
+
+@media all and (min-width: 800px) {
+  /* line 180, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  body.one-page {
+    padding-top: 70px; }
+
+  /* line 183, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .flexnav {
+    overflow: visible; }
+    /* line 185, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+    .flexnav.opacity {
+      opacity: 1; }
+    /* line 188, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+    .flexnav.one-page {
+      top: 0;
+      right: auto;
+      max-width: 1080px; }
+    /* line 193, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+    .flexnav li {
+      position: relative;
+      list-style: none;
+      float: right ;
+      display: block;
+      background-color: none;
+      overflow: visible;
+      margin-right: 20px; }
+    /* line 206, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+    .flexnav li > ul {
+      position: absolute;
+      top: auto;
+      left: 0; }
+      /* line 211, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+      .flexnav li > ul li {
+        width: 100%; }
+    /* line 215, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+    .flexnav li ul li > ul {
+      margin-left: 100%;
+      top: 0; }
+    /* line 222, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+    .flexnav li ul li a {
+      border-bottom: none; }
+    /* line 225, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+    .flexnav li ul.open {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      z-index: 1; }
+      /* line 230, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+      .flexnav li ul.open li {
+        overflow: visible;
+        max-height: 100px; }
+      /* line 234, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+      .flexnav li ul.open ul.open {
+        margin-left: 100%;
+        top: 0; }
+
+  /* line 240, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .menu-button {
+    display: none; }
+ }
+
+/* line 246, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+.oldie body.one-page {
+  padding-top: 70px; }
+/* line 249, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+.oldie .flexnav {
+  overflow: visible; }
+  /* line 251, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .oldie .flexnav.one-page {
+    top: 0;
+    right: auto;
+    max-width: 1080px; }
+  /* line 256, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .oldie .flexnav li {
+    position: relative;
+    list-style: none;
+    float: left ;
+    display: block;
+    background-color: #000;
+    width: 20%;
+    min-height: 50px;
+    overflow: visible; }
+  /* line 266, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .oldie .flexnav li:hover > ul {
+    display: block;
+    width: 100%;
+    overflow: visible; }
+    /* line 270, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+    .oldie .flexnav li:hover > ul li {
+      width: 100%;
+      float: none; }
+  /* line 275, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .oldie .flexnav li a {
+    border-left: 1px solid #acaca1;
+    border-bottom: none;
+    overflow: visible; }
+  /* line 280, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .oldie .flexnav li > ul {
+    background: #acaca1;
+    position: absolute;
+    top: auto;
+    left: 0;
+    display: none;
+    z-index: 1;
+    overflow: visible; }
+  /* line 289, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .oldie .flexnav li ul li ul {
+    top: 0; }
+  /* line 292, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .oldie .flexnav li ul li a {
+    border-bottom: none; }
+  /* line 295, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .oldie .flexnav li ul.open {
+    display: block;
+    width: 100%;
+    overflow: visible; }
+    /* line 299, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+    .oldie .flexnav li ul.open li {
+      width: 100%; }
+    /* line 302, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+    .oldie .flexnav li ul.open ul.open {
+      margin-left: 100%;
+      top: 0;
+      display: block;
+      width: 100%;
+      overflow: visible; }
+  /* line 310, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+  .oldie .flexnav ul li:hover ul {
+    margin-left: 100%;
+    top: 0; }
+/* line 315, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+.oldie .menu-button {
+  display: none; }
+/* line 318, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/components/flexnav */
+.oldie.ie7 .flexnav li {
+  width: 19.9%; }
+
+/* =Menu
+----------------------------------------------- */
+/* line 4, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/navigation */
+.site-main [class*="navigation"] {
+  width: 100%;
+  float: left ;
+  margin: 25px 0 1.5em;
+  overflow: hidden; }
+
+/* line 10, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/navigation */
+[class*="navigation"] .nav-previous {
+  float: left ;
+  margin-top: 25px;
+  width: 50%; }
+
+/* line 15, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/navigation */
+[class*="navigation"] .nav-next {
+  float: right ;
+  text-align: right;
+  margin-top: 25px;
+  width: 50%; }
+
+/* line 22, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/navigation */
+.main-navigation ul ul {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  display: none;
+  float: left ;
+  left: 0;
+  position: absolute;
+  top: 1.5em;
+  z-index: 99999;
+  background: #fff;
+  padding: 30px; }
+
+/* line 33, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/navigation */
+#site-navigation {
+  border-top: solid 5px #f3f3f3;
+  border-bottom: solid 5px #f3f3f3; }
+
+/* line 37, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/navigation */
+ul.nav-menu li {
+  -webkit-transition: background 200ms ease-in-out;
+  -moz-transition: background 200ms ease-in-out;
+  transition: background 200ms ease-in-out;
+  background: #fff;
+  padding: 10px; }
+  @media screen and (min-width: 200px)  {
+    ul.nav-menu li {
+      text-align: center;
+      width: 100%; } }
+  @media screen and (min-width: 768px)  {
+    ul.nav-menu li {
+      text-align: none;
+      width: inherit; } }
+  /* line 50, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/navigation */
+  ul.nav-menu li:hover {
+    -webkit-transition: background 200ms ease-in-out;
+    -moz-transition: background 200ms ease-in-out;
+    transition: background 200ms ease-in-out;
+    background: #f3f3f3; }
+
+/* line 57, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/navigation */
+.menu-main-menu-container li.current-menu-item {
+  background-color: #f3f3f3;
+  display: block; }
+
+/* line 65, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/navigation */
+ul.nav-menu li.current_page_item {
+  background: #f3f3f3; }
+
+/* line 69, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/navigation */
+#primary-nav {
+  position: relative;
+  z-index: 9999;
+  background: #000;
+  padding: 10px;
+  max-width: 100%;
+  width: 100%; }
+  @media screen and (min-width: 768px)  {
+    #primary-nav {
+      position: absolute;
+      background: none; } }
+  /* line 82, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/navigation */
+  #primary-nav #logo {
+    max-width: 200px;
+    float: left; }
+
+/* line 88, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/navigation */
+nav.post-navigation {
+  width: 100%; }
+
+/* line 91, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/navigation */
+.nav-links {
+  width: 100%; }
+  @media screen and (min-width: 200px)  {
+    .nav-links .nav-previous {
+      float: left;
+      display: block;
+      margin-right: 6.66667%;
+      width: 46.66667%;
+      margin-right: 0; }
+      /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+      .nav-links .nav-previous:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 200px)  {
+    .nav-links .nav-next {
+      float: left;
+      display: block;
+      margin-right: 6.66667%;
+      width: 46.66667%;
+      margin-right: 0; }
+      /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+      .nav-links .nav-next:last-child {
+        margin-right: 0; } }
+
+/*--------------------------------------------------------------
+	6.3 Content
+	--------------------------------------------------------------*/
+/* line 1, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.sticky {
+  background: #f1f1f1; }
+
+/* line 4, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.gallery-caption {
+  list-style: none; }
+
+/* line 7, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.bypostauthor {
+  list-style: none; }
+
+/* line 10, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.hentry {
+  margin: 0 0 1.5em;
+  padding: 50px 2em; }
+  /* line 22, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+  .hentry h1 {
+    margin: 0px;
+    font-size: 75px;
+    font-size: 4.16667rem; }
+
+/* line 28, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.hentry.post-23 {
+  background-color: #f2f2f2; }
+
+/* line 35, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.byline, .updated {
+  display: none; }
+
+/* line 39, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.single .byline, .group-blog .byline {
+  display: inline; }
+
+/* line 44, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.page-content, .entry-content, .entry-summary {
+  margin: 1.5em 0 0; }
+
+/* line 47, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em; }
+
+/* line 52, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.aligncenter {
+  float: none;
+  margin-top: 0.5em;
+  margin-right: auto !important;
+  margin-bottom: 0.5em;
+  margin-left: auto !important; }
+  /* line 20, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/bourbon/app/assets/stylesheets/addons/clearfix */
+  .aligncenter::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+/* line 60, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.alignleft {
+  display: inline;
+  float: left ;
+  margin-right: 1.5em; }
+
+/* line 65, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.alignright {
+  display: inline;
+  float: right ;
+  margin-left: 1.5em; }
+
+/* line 71, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.sticky {
+  float: left ;
+  padding: 20px; }
+
+/* =Breadcrumbs
+----------------------------------------------- */
+/* line 80, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+#breadcrumbs {
+  font-size: 14px;
+  font-size: 0.77778rem;
+  font-family: "Lucida Grande", "Tahoma", "Verdana", "Arial", sans-serif;
+  padding: 20px 0 20px 50px; }
+
+/* =Media
+----------------------------------------------- */
+/* line 91, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.page-content img.wp-smiley, .entry-content img.wp-smiley, .comment-content img.wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0; }
+
+/* line 97, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.wp-caption {
+  border: 1px solid #ccc;
+  clear: both;
+  margin-bottom: 1.5em;
+  max-width: 100%; }
+
+/* line 103, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin: 1.2% auto 0;
+  max-width: 98%; }
+
+/* line 108, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.wp-caption-text {
+  text-align: center; }
+
+/* line 111, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.wp-caption .wp-caption-text {
+  margin: 0.8075em 0; }
+
+/* line 114, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.site-main .gallery {
+  margin-bottom: 1.5em; }
+
+/* line 119, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.site-main .gallery a img {
+  border: none;
+  height: auto;
+  max-width: 90%; }
+
+/* line 124, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.site-main .gallery dd {
+  margin: 0; }
+
+/* Make sure embeds and iframes fit their containers */
+/* line 135, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+embed, iframe, object {
+  max-width: 100%; }
+
+/* =Comments
+----------------------------------------------- */
+/* line 141, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.comment-content a {
+  word-wrap: break-word; }
+
+/* =Infinite Scroll
+----------------------------------------------- */
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+/* line 152, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.infinite-scroll .paging-navigation, .infinite-scroll.neverending .site-footer {
+  /* Theme Footer (when set to scrolling) */
+  display: none; }
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+/* line 157, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+.infinity-end.neverending .site-footer {
+  display: block; }
+
+/* line 164, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+#content .entry-content a, #content .entry-content a:visited {
+  text-decoration: underline; }
+  /* line 167, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+  #content .entry-content a:hover, #content .entry-content a:visited:hover {
+    text-decoration: none; }
+/* line 173, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+#content .entry-meta a, #content .entry-meta a:visited {
+  text-decoration: underline; }
+  /* line 176, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/content */
+  #content .entry-meta a:hover, #content .entry-meta a:visited:hover {
+    text-decoration: none; }
+
+/*--------------------------------------------------------------
+	6.4 Page Templates
+	--------------------------------------------------------------*/
+/* line 4, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/template-2col-l-sidebar */
+.page-template-page-templatestemplate-left-col-php h1.entry-title {
+  margin: 0;
+  text-align: left; }
+@media screen and (min-width: 768px)  {
+  .page-template-page-templatestemplate-left-col-php #main {
+    display: flex; } }
+@media screen and (min-width: 200px)  {
+  .page-template-page-templatestemplate-left-col-php #main #primary {
+    float: left;
+    display: block;
+    margin-right: 6.66667%;
+    width: 100%; }
+    /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+    .page-template-page-templatestemplate-left-col-php #main #primary:last-child {
+      margin-right: 0; } }
+@media screen and (min-width: 768px)  {
+  .page-template-page-templatestemplate-left-col-php #main #primary {
+    float: left;
+    display: block;
+    margin-right: 4.34783%;
+    width: 65.21739%;
+    order: 2; }
+    /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+    .page-template-page-templatestemplate-left-col-php #main #primary:last-child {
+      margin-right: 0; } }
+/* line 30, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/template-2col-l-sidebar */
+.page-template-page-templatestemplate-left-col-php #main #secondary {
+  margin-right: 1.5%; }
+  @media screen and (min-width: 200px)  {
+    .page-template-page-templatestemplate-left-col-php #main #secondary {
+      float: left;
+      display: block;
+      margin-right: 6.66667%;
+      width: 100%; }
+      /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+      .page-template-page-templatestemplate-left-col-php #main #secondary:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 768px)  {
+    .page-template-page-templatestemplate-left-col-php #main #secondary {
+      float: left;
+      display: block;
+      margin-right: 4.34783%;
+      width: 30.43478%;
+      order: 1; }
+      /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+      .page-template-page-templatestemplate-left-col-php #main #secondary:last-child {
+        margin-right: 0; } }
+/* line 47, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/template-2col-l-sidebar */
+.page-template-page-templatestemplate-left-col-php footer {
+  clear: both;
+  display: table; }
+
+/* line 4, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/template-2col-r-sidebar */
+.page-template-page-templatestemplate-right-col-php h1.entry-title {
+  margin: 0;
+  text-align: left; }
+@media screen and (min-width: 200px)  {
+  .page-template-page-templatestemplate-right-col-php #primary {
+    float: left ; }
+    @media screen and (min-width: 200px)  {
+      .page-template-page-templatestemplate-right-col-php #primary {
+        float: left;
+        display: block;
+        margin-right: 6.66667%;
+        width: 100%; }
+        /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+        .page-template-page-templatestemplate-right-col-php #primary:last-child {
+          margin-right: 0; } }
+    @media screen and (min-width: 768px)  {
+      .page-template-page-templatestemplate-right-col-php #primary {
+        float: left;
+        display: block;
+        margin-right: 4.34783%;
+        width: 65.21739%; }
+        /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+        .page-template-page-templatestemplate-right-col-php #primary:last-child {
+          margin-right: 0; } } }
+@media screen and (min-width: 768px)  {
+  .page-template-page-templatestemplate-right-col-php #secondary {
+    float: right ;
+    margin-right: 1.5%; }
+    @media screen and (min-width: 200px)  {
+      .page-template-page-templatestemplate-right-col-php #secondary {
+        float: left;
+        display: block;
+        margin-right: 6.66667%;
+        width: 100%; }
+        /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+        .page-template-page-templatestemplate-right-col-php #secondary:last-child {
+          margin-right: 0; } }
+    @media screen and (min-width: 768px)  {
+      .page-template-page-templatestemplate-right-col-php #secondary {
+        float: left;
+        display: block;
+        margin-right: 4.34783%;
+        width: 30.43478%; }
+        /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+        .page-template-page-templatestemplate-right-col-php #secondary:last-child {
+          margin-right: 0; } } }
+
+/* line 3, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/template-full-width */
+.page-template-page-templatestemplate-full-width-php #primary {
+  width: 100%; }
+/* line 7, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/template-full-width */
+.page-template-page-templatestemplate-full-width-php #secondary {
+  width: 100%; }
+
+/*--------------------------------------------------------------
+	6.5 Sidebar
+	--------------------------------------------------------------*/
+/* =Asides
+----------------------------------------------- */
+/* line 5, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/sidebar */
+.blog .format-aside .entry-title, .archive .format-aside .entry-title {
+  display: none; }
+
+/* =Widgets
+----------------------------------------------- */
+/* line 12, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/sidebar */
+.widget {
+  margin: 0 0 1.5em; }
+
+/* Make sure select elements fit in widgets */
+/* line 17, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/sidebar */
+.widget select {
+  max-width: 100%; }
+
+/* Search widget */
+/* line 22, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/sidebar */
+.widget_search .search-submit {
+  display: none; }
+
+/*--------------------------------------------------------------
+	6.6 Footer
+	--------------------------------------------------------------*/
+/* line 1, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/footer */
+footer {
+  float: left ;
+  margin: 0 auto;
+  width: 100%; }
+  /* line 5, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/footer */
+  footer .site-info {
+    margin: auto;
+    width: 100%; }
+  /* line 9, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/footer */
+  footer .footer-left {
+    float: left;
+    display: block;
+    margin-right: 2.12766%;
+    width: 48.93617%;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding: 10px;
+    text-align: left; }
+    /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+    footer .footer-left:last-child {
+      margin-right: 0; }
+  /* line 16, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/footer */
+  footer .footer-right {
+    float: left;
+    display: block;
+    margin-right: 2.12766%;
+    width: 48.93617%;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding: 10px;
+    text-align: right; }
+    /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+    footer .footer-right:last-child {
+      margin-right: 0; }
+
+/*--------------------------------------------------------------
+	6.7 Accessbility
+	--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+/* line 2, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/accessibility */
+.screen-reader-text {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px); }
+  /* line 11, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/layouts/accessibility */
+  .screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+    top: 5px;
+    left: 5px;
+    z-index: 100000;
+    /* Above WP toolbar */
+    clip: auto !important;
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 15px 23px 14px;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    line-height: normal;
+    color: #f3f3f3;
+    background-color: #cccccc;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); }
+
+/* line 5, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/style.scss */
+.cards {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify; }
+
+/* line 11, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/style.scss */
+.card {
+  -webkit-flex-basis: 15em;
+  -moz-flex-basis: 15em;
+  flex-basis: 15em;
+  -ms-flex-preferred-size: 15em;
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px #e6e6e6;
+  cursor: pointer;
+  margin: 0 1em 1.5em 1em;
+  position: relative; }
+  /* line 40, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/style.scss */
+  .card .card-image {
+    overflow: hidden;
+    max-height: 150px; }
+    /* line 44, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/style.scss */
+    .card .card-image img {
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      background: #DBD199;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      width: 100%; }
+  /* line 53, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/style.scss */
+  .card .card-header {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+    border-radius: 3px 3px 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: 0.5em 0.75em; }
+  /* line 63, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/style.scss */
+  .card .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: 0.75em 0.75em; }
+    /* line 68, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/style.scss */
+    .card .card-copy p {
+      margin: 0 0 0.75em; }
+  /* line 74, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/style.scss */
+  .card:focus, .card:hover {
+    background-color: white; }
+    /* line 77, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/style.scss */
+    .card:focus .card-image img, .card:hover .card-image img {
+      background: #e2daac; }
+    /* line 81, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/style.scss */
+    .card:focus .card-header, .card:hover .card-header {
+      background-color: white; }
+  /* line 86, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/style.scss */
+  .card:active {
+    background-color: #f7f7f7; }
+    /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/style.scss */
+    .card:active .card-header {
+      background-color: #f7f7f7; }
+
+/* line 97, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/style.scss */
+#post-23 section {
+  max-width: 121.25em;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 20, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/bourbon/app/assets/stylesheets/addons/clearfix */
+  #post-23 section::after {
+    clear: both;
+    content: "";
+    display: table; }
+  /* line 99, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/style.scss */
+  #post-23 section aside {
+    float: left;
+    display: block;
+    margin-right: 2.12766%;
+    width: 23.40426%; }
+    /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+    #post-23 section aside:last-child {
+      margin-right: 0; }
+  /* line 100, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/sass/style.scss */
+  #post-23 section article {
+    float: left;
+    display: block;
+    margin-right: 2.12766%;
+    width: 74.46809%; }
+    /* line 89, /Users/mark/Development/delaDev/DeLaWP/wp-content/themes/delaNeat/assets/bower_components/neat/app/assets/stylesheets/grid/span-columns */
+    #post-23 section article:last-child {
+      margin-right: 0; }
+
+/*# sourceMappingURL=style.css.map */
